@@ -177,89 +177,125 @@
       }
     </style>
   </head>
-  <body>
+    <body>
     <header>
-      <img
+        <img
         src="https://www.iitbhu.ac.in/contents/iitbhu/img/other/iit_logo_original.png"
         alt="IIT BHU Logo"
-      />
-      <h1>ForgeRePO – Unified Continual Learning Framework</h1>
+        />
+        <h1>MTL-ForgeRePO – Multi-Task-Learner using Forget-Recall & Pareto Optimization</h1>
     </header>
 
     <section class="section two-column">
-      <div class="brief">
-        <h2>Brief Overview</h2>
+        <div class="brief">
+        <h2>Field of the Invention</h2>
         <p>
-          ForgeRePO is an adaptive continual learning platform designed to unify
-          Task-, Domain-, and Class-Incremental learning with Reinforcement
-          Learning. It automates data preprocessing, model lifecycle management,
-          and deployment through a modular API architecture, enabling scalable
-          experimentation and sustainable AI workflows.
+            The invention pertains to Artificial Intelligence and Computational Drug Discovery,
+            focusing on Continual Learning frameworks for Molecular Property Prediction using Large
+            Language Models (LLMs). It introduces a Multi-Task Learner (MTL) system based on the
+            Forget-Recall (ForgeRe) principle and Pareto Optimization (PO) to mitigate Catastrophic
+            Forgetting (CF) during sequential learning from SMILES-based molecular representations.
         </p>
-      </div>
-      <div class="video">
+        </div>
+        <div class="video">
         <iframe
-          src="https://www.youtube.com/embed/q1ipYDkb0KM"
-          allowfullscreen
+            src="https://www.youtube.com/embed/q1ipYDkb0KM"
+            allowfullscreen
         ></iframe>
-        <a href="ForgeRePO-app.apk" class="download-btn" download
-          >⬇ Download ForgeRePO App (APK)</a
-        >
-      </div>
+        <a href="ForgeRePO-app.apk" class="download-btn" download>
+            ⬇ Download ForgeRePO Prototype (APK)
+        </a>
+        </div>
     </section>
 
     <section class="section">
-      <h2>Description</h2>
-      <p>
-        The ForgeRePO framework introduces a dynamic and automated system for
-        model training, reuse, and optimization. Built upon the ForgeRePO
-        principle, it leverages a central repository for model versioning and
-        re-deployment across learning tasks. The system supports multi-objective
-        optimization and provides RESTful APIs for seamless interaction between
-        data, model, and inference layers.
-      </p>
+        <h2>Invention Overview</h2>
+        <p>
+        The MTL-ForgeRePO framework discloses a Continual Learning (CL) system and method for
+        molecular property prediction, enabling LLMs to learn new molecular data without losing
+        prior task knowledge. Unlike replay-based CL methods that are computationally heavy and
+        disrupt inter-task relations, this invention performs <strong>selective forgetting before adaptive
+        recall</strong> — inspired by the human brain’s memory mechanism.
+        </p>
+        <p>
+        By integrating Pareto Optimization to balance the stability–plasticity trade-off and a
+        ChemBERTa-based transformer with hierarchical gradient aggregation, the model eliminates the
+        need for replay buffers while achieving stable, multi-task generalization across datasets such as
+        BBBP, Bitter, and Sweet.
+        </p>
     </section>
 
     <section class="section">
-      <h2>Gallery</h2>
-      <div class="images">
-        <img src="image1.drawio.png" alt="Diagram 1" />
-        <img src="image2.drawio.png" alt="Diagram 2" />
-        <img src="image3.drawio.png" alt="Diagram 3" />
-        <img src="image4.drawio.png" alt="Diagram 4" />
-      </div>
+        <h2>System Architecture</h2>
+        <p>
+        The framework comprises four primary modules:
+        <ol>
+            <li>
+            <strong>Data & Pre-processing Module</strong> – Handles SMILES input, molecular tokenization,
+            and embedding generation.
+            </li>
+            <li>
+            <strong>Multi-Task Learner</strong> – Integrates three stacked ChemBERTa models trained on
+            BBBP, Bitter, and Sweet datasets (Episodes A, B, C) with positional and token embeddings,
+            multi-head attention, and feed-forward layers optimized via Pareto fronts.
+            </li>
+            <li>
+            <strong>Model Evaluation Module</strong> – Implements oEWC, DER++, CPR, and ER to
+            evaluate continual-learning stability and visualize performance metrics.
+            </li>
+            <li>
+            <strong>Application Module</strong> – A computer-implemented application built with FastAPI,
+            featuring Connect, Train, and Inference modules for real-time molecular prediction,
+            visualization, and repository management. Deployed effectively on Android devices.
+            </li>
+        </ol>
+        </p>
+        <p>
+        This system achieves superior predictive accuracy and reduced forgetting across molecular
+        datasets, providing a scalable and interpretable continual-learning solution for drug discovery,
+        molecular design, and pharmacokinetic screening.
+        </p>
     </section>
 
-    <!-- Lightbox Container -->
+    <section class="section">
+        <h2>Gallery</h2>
+        <div class="images">
+        <img src="image1.png" alt="Architecture Overview" />
+        <img src="image2.png" alt="Pareto Optimization Process" />
+        <img src="image3.png" alt="Multi-Task Learning Flow" />
+        <img src="image4.png" alt="ForgeRePO Application Interface" />
+        </div>
+    </section>
+
     <div id="lightbox" class="lightbox">
-      <span class="close">&times;</span>
-      <img id="lightbox-img" src="" alt="Expanded view" />
+        <span class="close">&times;</span>
+        <img id="lightbox-img" src="" alt="Expanded view" />
     </div>
 
-    <footer>© 2025 ForgeRePO | Developed at IIT BHU, Varanasi</footer>
+    <footer>© 2025 MTL-ForgeRePO | Developed at IIT BHU, Varanasi</footer>
 
     <script>
-      const images = document.querySelectorAll(".images img");
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightbox-img");
-      const closeBtn = document.querySelector(".close");
+        const images = document.querySelectorAll(".images img");
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const closeBtn = document.querySelector(".close");
 
-      images.forEach((img) => {
+        images.forEach((img) => {
         img.addEventListener("click", () => {
-          lightbox.style.display = "flex";
-          lightboxImg.src = img.src;
+            lightbox.style.display = "flex";
+            lightboxImg.src = img.src;
         });
-      });
+        });
 
-      closeBtn.addEventListener("click", () => {
+        closeBtn.addEventListener("click", () => {
         lightbox.style.display = "none";
-      });
+        });
 
-      lightbox.addEventListener("click", (e) => {
+        lightbox.addEventListener("click", (e) => {
         if (e.target === lightbox) {
-          lightbox.style.display = "none";
+            lightbox.style.display = "none";
         }
-      });
+        });
     </script>
-  </body>
+    </body>
 </html>
