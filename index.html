@@ -117,6 +117,30 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       }
 
+      .app-images {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(125px, 1fr)); /* half of 250px */
+          gap: 1rem;
+          margin-top: 1rem;
+      }
+
+      .app-images img {
+          width: 100%;
+          background: #fff;
+          border-radius: 12px;
+          padding: 0.5rem;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+          transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+          cursor: pointer;
+          display: block;
+      }
+
+      .app-images img:hover {
+          transform: scale(1.03);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+
       /* Lightbox Styles */
       .lightbox {
         display: none;
@@ -286,6 +310,19 @@
         <img src="image2.png" alt="Pareto Optimization Process" />
         <img src="image3.png" alt="Multi-Task Learning Flow" />
         <img src="image4.png" alt="ForgeRePO Application Interface" />
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>App Gallery</h2>
+        <div class="images app-images">
+        <img src="assets/app1.jpg" alt="Architecture Overview" />
+        <img src="assets/app2.jpg" alt="Architecture Overview" />
+        <img src="assets/app3.jpg" alt="Pareto Optimization Process" />
+        <img src="assets/app4.jpg" alt="Pareto Optimization Process" />
+        <img src="assets/app5.jpg" alt="Multi-Task Learning Flow" />
+        <img src="assets/app6.jpg" alt="Multi-Task Learning Flow" />
+        <img src="assets/app7.jpg" alt="ForgeRePO Application Interface" />
         </div>
     </section>
 
