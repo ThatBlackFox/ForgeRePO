@@ -272,6 +272,20 @@
     </section>
 
     <section class="section">
+      <h2>App Description</h2>
+      <p>
+        The application is built using Flutter, compiled with the Android SDK, and connected to an on-premise GPU server through a FastAPI backend. A ZeroTier virtual network makes the entire setup function as if the mobile device and server were on the same local network.
+      </p>
+      <p>
+        Model training is triggered when the app calls the <code>/train</code> endpoint, sending hyperparameters, the selected dataset, and the chosen continual-learning mode. A background worker executes the job independently so the main API remains responsive.
+      </p>
+      <p>
+        The client monitors progress by polling the <code>/logs</code> endpoint, which streams raw log strings for near real-time visibility into the training loop. The server uses pre-validated CSV datasets, maintains all model outputs on the local filesystem, and centralizes metadata management, training, and inference. Logs are ephemeral and are not stored.
+      </p>
+    </section>
+
+
+    <section class="section">
         <h2>System Architecture</h2>
         <p>
         The framework comprises four primary modules:
